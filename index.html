@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<style>
+			.background
+			{
+				background-image: url("");
+			}
+		</style>
+	</head>
+	<body>
+		<canvas width="800px" height="600px" style="border: solid 1px;" id="backgroundCanvas"></canvas>
+
+		<script>
+		var Vertical = [];
+
+		for(h = 0; h < 20; h++)
+		{
+			for(v = 0; v < 15; v++)
+			{
+				if(!Vertical[h])
+				{
+					Vertical[h] = [];
+				}
+
+				var Position = {};
+				Vertical[h].push(Position);
+			}
+		}
+
+		console.log(Vertical);
+
+		var bCanvas = document.getElementById("backgroundCanvas");
+		var bBox = bCanvas.getContext("2d");
+
+		for(h = 0; h < Vertical.length; h++)
+		{
+			for(v = 0; v < Vertical[h].length; v++)
+			{
+				bBox.strokeStyle = "lightgrey";
+				bBox.strokeRect(h*40, v*40, 40, 40);
+			}
+		}
+
+		</script>
+	</body>
+</html>
